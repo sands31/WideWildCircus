@@ -1,0 +1,18 @@
+:root {
+    --orange: #ec5d31;
+	--lightGrey: #eadecd;
+    --purple: #5e3388;
+    --grey: #c4c4c4; 
+    --darkGrey: #0f1011db;
+    --mediumGrey:#464646;
+    --active: #82D485;
+    --danger: #DC3545;
+    --update: orange;
+    --font-1: 'Acme';
+    --font-2: 'Roboto';
+    --font-nav: 'Open Sans';
+}
+
+header nav {
+	height: 100px;
+}
