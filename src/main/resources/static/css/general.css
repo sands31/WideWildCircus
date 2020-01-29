@@ -20,9 +20,9 @@
 	
 }
 
-.font-1, h1 {
+.font-1, h1, h2 {
 	font-family: var(--font-1);
-	font-size: 2em;
+	font-size: 2.5em;
 }
 
 p, ul, li {
@@ -38,12 +38,23 @@ main {
 	position: relative;
 }
 
+.btn {
+	background-color: var(--fauve);
+	border-color: var(--fauve);
+}
+
+.btn:hover {
+	background-color: var(--darkBrown);
+	border-color: var(--darkBrown);
+	color: var(--fauve);
+}
+
 .pawn {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	background-color: var(--darkBrown);
-	border-color: var(--darkBrown);
+	background-color: var(--fauve);
+	border-color: var(--fauve);
 	border-radius: 50%;
 	height: 60px;
 	width: 60px;
@@ -53,12 +64,16 @@ main {
 }
 
 .pawn path {
-	fill:var(--fauve);
+	fill:var(--darkBrown);
 }
 
 .pawn:hover {
-	background-color: var(--fauve);
-	border-color: var(--fauve);
+	background-color: var(--darkBrown);
+	border-color: var(--darkBrown);
+}
+
+.pawn:hover path {
+	fill:var(--fauve);
 }
 
 .pawn:active {
@@ -67,26 +82,29 @@ main {
 	box-shadow: var(--darkBrown)!important;
 }
 
-.pawn:hover path {
-	fill:var(--darkBrown);
-}
+
+
+
+/*Header*/
 
 header nav {
-	height: 100px;
+	height: 150px;
 	background-color: var(--darkBrown);
 	
-
 }
 
 header {
+
 	position: -webkit-sticky;
   	position: sticky;
 	top: 0;	
-	z-index: 2;
+	z-index: 100;
 }
 
+/*Caroussel*/
+
 .carousel,.carousel-inner, .carousel-item {
-	height: calc(100vh - 100px);
+	height: calc(100vh - 150px);
 }
 
 .carousel-item{
@@ -95,6 +113,8 @@ header {
 
 .carousel-caption * {
 	color:var(--white);
+	text-shadow: 2px 2px 2px black;
+
 }
 
 .carousel img {
@@ -103,12 +123,10 @@ header {
 	width: 100%;
 }
 
-.about-us {
-	background-color: 
-}
+/*Section About Us*/
 
 .about-us {
-	background-color: var(--light);
+	background-color: var(--white);
 }
 
 .jumbotron {
@@ -123,5 +141,52 @@ header {
 	background-color: var(--darkBrown);
 }
 
+/*Section Articles*/
+
+.articles {
+	background: url("/img/bg-articles-dark.jpg"), no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+		
+}
+
+.articles h2 {
+	color: var(--light);
+}
+
+.articles .card{
+	border: 1px solid var(--darkBrown);
+}
+
+.articles h5 {
+	font-family: var(--font-1);
+}
+
+.articles p  {
+	font-size: 1em;
+}
+
+.articles svg {
+	height: 20px;
+}
+
+.articles path {
+	color: var(--fauve);
+}
+
+
+
+@media screen and (max-width: 700px){
+
+
+	.pawn {
+
+		bottom: 10px;
+		right: 10px;
+
+	}
+
+}
 
 
