@@ -1,0 +1,37 @@
+.gallery-container {
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+
+.tz-gallery .lightbox img:hover {
+    transform: scale(1.02);
+}
+
+.tz-gallery img {
+    border-radius: 4px;
+}
+
+.baguetteBox-button svg {
+    height: 60px;
+}
+
+
+@media(max-width: 768px) {
+
+    .container.gallery-container {
+        border-radius: 0;
+    }
+}
