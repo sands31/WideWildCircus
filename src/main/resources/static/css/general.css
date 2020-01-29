@@ -1,18 +1,127 @@
 :root {
-    --orange: #ec5d31;
-	--lightGrey: #eadecd;
-    --purple: #5e3388;
-    --grey: #c4c4c4; 
-    --darkGrey: #0f1011db;
-    --mediumGrey:#464646;
+    --darkBrown: #393432;
+    --brown: #b78065;
+    --light: #f9f2ec; 
+    --fauve:#ffc85c;
+    --white: white;
     --active: #82D485;
     --danger: #DC3545;
-    --update: orange;
-    --font-1: 'Acme';
-    --font-2: 'Roboto';
-    --font-nav: 'Open Sans';
+    --font-1: 'Rock Salt', cursive;    
+    --font-2: 'Open Sans';
+    --font-3: 'Raleway';
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: var(--darkBrown);
+	font-family: var(--font-3);
+	
+}
+
+.font-1, h1 {
+	font-family: var(--font-1);
+	font-size: 2em;
+}
+
+p, ul, li {
+	font-size: 16pt;
+
+}
+
+svg {
+	height:25px;
+}
+
+main {
+	position: relative;
+}
+
+.pawn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: var(--darkBrown);
+	border-color: var(--darkBrown);
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pawn path {
+	fill:var(--fauve);
+}
+
+.pawn:hover {
+	background-color: var(--fauve);
+	border-color: var(--fauve);
+}
+
+.pawn:active {
+	background-color: var(--light)!important;
+	border-color: var(--darkBrown)!important;
+	box-shadow: var(--darkBrown)!important;
+}
+
+.pawn:hover path {
+	fill:var(--darkBrown);
 }
 
 header nav {
 	height: 100px;
+	background-color: var(--darkBrown);
+	
+
 }
+
+header {
+	position: -webkit-sticky;
+  	position: sticky;
+	top: 0;	
+	z-index: 2;
+}
+
+.carousel,.carousel-inner, .carousel-item {
+	height: calc(100vh - 100px);
+}
+
+.carousel-item{
+	position: relative;	
+}
+
+.carousel-caption * {
+	color:var(--white);
+}
+
+.carousel img {
+	position: absolute;
+	top:0;
+	width: 100%;
+}
+
+.about-us {
+	background-color: 
+}
+
+.about-us {
+	background-color: var(--light);
+}
+
+.jumbotron {
+	background-color: var(--fauve);
+}
+
+.jumbotron li  {
+	font-size: 0.9em;
+}
+
+.jumbotron.btn {
+	background-color: var(--darkBrown);
+}
+
+
+
