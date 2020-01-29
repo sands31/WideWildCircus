@@ -137,6 +137,10 @@ header {
 	font-size: 0.9em;
 }
 
+.jumbotron svg {
+	width: 20px;
+}
+
 .jumbotron.btn {
 	background-color: var(--darkBrown);
 }
