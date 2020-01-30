@@ -33,9 +33,18 @@ public class AdminController {
 		return "admin_home";
 	}
 	
+	@GetMapping("/admin/createArticle")
+	public String createArticle(Model model) {
+		model.addAttribute("page", "adminCreateArticle");
+		return "admin_article_create";
+	}
+	
 	@GetMapping("/admin/articles")
 	public String articles(Model model) {
-		model.addAttribute("articles", articleRepository.findAll());		
+		model.addAttribute("articles", articleRepository.findAll());
+		model.addAttribute("page", "adminArticles");
 		return "admin_articles";
 	}
+	
+
 }

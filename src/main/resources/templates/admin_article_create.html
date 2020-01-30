@@ -17,10 +17,45 @@
   <div id="wrapper">
 	  <aside th:replace="fragments/admin_sidebar.html :: sidebar"></aside>
 	  <div th:replace="fragments/admin_sidebar.html :: navbar"></div>
-	  <section class="fluid-container pt-3" id="content-wrapper"> 
-	  	<h1>Tableau de bord</h1>	
-	  
-    	</section>
+	  <main class="fluid-container pt-3" id="content-wrapper">
+	  	<section>
+	  	<h2 class="text-center my-4">Création d'un nouvel article</h2>
+	  	<div class="row d-flex justify-content-center pt-4">
+		  	<form method="post" th:action="@{/admin/createArticle}" class="col-12 col-sm-10">
+	      		 <div class="form-row">
+				    <div class="form-group col-md-6">
+				      <label for="inputAuthor">Auteur</label>
+				      <input type="text" class="form-control" id="inputAuthor" name="author">
+				    </div>
+				    <div class="form-group col-md-6">
+				      <label for="inputTitle">Titre</label>
+				      <input type="text" class="form-control" id="inputTitle" name="title">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputContent">Contenu</label>
+				    <textarea rows="10" minlength="115" class="form-control" id="inputAddress" name="content"></textarea>
+				  </div>
+				  <div class="form-group">
+				    <div class="form-check">
+				      <input class="form-check-input" type="checkbox" id="gridCheck" name="publishState">
+				      <label class="form-check-label" for="gridCheck">
+				        Publier directement sur le site
+				      </label>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlFile1">Image</label>
+				    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="pictureFile">
+				  </div>
+				  <div class="d-flex justify-content-center mt-4">
+					  <button type="submit" class="btn btn-inverse ">Créer</button>
+				  </div>
+			</form>
+	  	</div>
+
+	  	</section>	  
+    	</main>
 	</div>	  
 </body>
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>

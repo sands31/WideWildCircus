@@ -172,10 +172,17 @@ a:focus {
 .btn {
 	background-color: var(--fauve);
 	border-color: var(--fauve);
-	width: 112px;
+	min-width: 112px;
+	width: auto;
 }
 
 .btn:hover {
+	background-color: var(--darkBrown);
+	border-color: var(--darkBrown);
+	color: var(--fauve);
+}
+
+.btn-inverse {
 	background-color: var(--darkBrown);
 	border-color: var(--darkBrown);
 	color: var(--fauve);

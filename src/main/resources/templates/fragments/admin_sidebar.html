@@ -9,14 +9,23 @@
       <h2>Wild Circus</h2>
     </div>
     <ul class="sidebar-nav d-flex flex-column">
-      <li th:class="|${page == 'adminArticles'} ? 'active' : ''|" >
-        <a href="/admin/articles" class="pl-3">Administration des Articles</a>
+      <li th:class="|${page == 'adminDashboard' ? 'active' : ''}|" >
+        <a href="/admin/dashboard" class="pl-3">Tableau de bord</a>
       </li>
-      <li th:class="|${page == 'adminGallery'} ? 'active' : ''|" >
-        <a href="/admin/gallery" class="pl-3">Administration de la Gallerie</a>
+      <li th:class="|${page == 'adminCreateArticle' ? 'active' : ''}|" >
+        <a href="/admin/createArticle" class="pl-3">Créer un article</a>
       </li>
-      <li th:class="|${page == 'adminTickets'} ? 'active' : ''|" >
-        <a href="/admin/tickets" class="pl-3">Administration des Tickets</a>
+      <li th:class="|${page == 'adminArticles' ? 'active' : ''}|" >
+        <a href="/admin/articles" class="pl-3">Gestion des Articles</a>
+      </li>
+      <li th:class="|${page == 'adminComments' ? 'active' : ''}|" >
+        <a href="/admin/comments" class="pl-3">Gestion des Commentaires</a>
+      </li>
+      <li th:class="|${page == 'adminGallery' ? 'active' : ''}|" >
+        <a href="/admin/gallery" class="pl-3">Gestion de la Gallerie</a>
+      </li>
+      <li th:class="|${page == 'adminTickets' ? 'active' : ''}|" >
+        <a href="/admin/tickets" class="pl-3">Gestion des Tickets</a>
       </li>
        <li >
         <a href="/" class="pl-3">Retour au site</a>
