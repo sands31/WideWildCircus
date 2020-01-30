@@ -1,0 +1,95 @@
+/*Caroussel*/
+
+.carousel-caption * {
+	color:var(--white);
+	text-shadow: 2px 2px 2px black;
+
+}
+.carousel h5 {
+	font-size: 2.5em;
+}
+
+/*Section About Us*/
+
+.about-us {
+	background-color: var(--white);
+}
+
+.jumbotron {
+	background-color: var(--fauve);
+}
+
+.jumbotron li  {
+	font-size: 0.9em;
+}
+
+.jumbotron svg {
+	width: 20px;
+}
+
+.jumbotron.btn {
+	background-color: var(--darkBrown);
+}
+
+/*Section Articles*/
+
+.articles {
+	background: url("/img/bg-articles-dark.jpg"), no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+		
+}
+
+.articles h2 {
+	color: var(--light);
+}
+
+.articles .card{
+	border: 1px solid var(--darkBrown);
+}
+
+.articles h5 {
+	font-family: var(--font-1);
+}
+
+.articles p  {
+	font-size: 1em;
+}
+
+.articles svg {
+	height: 20px;
+}
+
+.articles path {
+	color: var(--fauve);
+}
+
+/*Tickets*/
+
+.tickets {
+	background: url("/img/bg-circus.jpg"), no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+}
+
+.tickets h2, .tickets > p {
+	color: var(--light);
+}
+
+.tickets img, .tickets .card-body {
+	height: 200px;
+	width: auto;
+}
+
+/*Inspiration*/
+
+@media screen and (max-width: 765px){
+	
+	.inspiration iframe {
+		max-width: 100%;
+		height: auto;
+	}
+
+}
