@@ -21,7 +21,7 @@
 	  	<section>
 	  	<h2 class="text-center my-4">Création d'un nouvel article</h2>
 	  	<div class="row d-flex justify-content-center pt-4">
-		  	<form method="post" th:action="@{/admin/createArticle}" class="col-12 col-sm-10">
+		  	<form method="post" th:action="@{/admin/createArticle}" class="col-12 col-sm-10" enctype="multipart/form-data">
 	      		 <div class="form-row">
 				    <div class="form-group col-md-6">
 				      <label for="inputAuthor">Auteur</label>
