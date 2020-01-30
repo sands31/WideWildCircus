@@ -28,7 +28,7 @@ public class Comment {
 	private String content;
 	private String author;
 	private String email;
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "article_id")
 	private Article article;
 	
