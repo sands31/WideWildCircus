@@ -20,12 +20,11 @@
 	
 }
 
-.font-1, h1 {
+.font-1 {
 	font-family: var(--font-1);
-	font-size: 2.5em;
 }
 
-h2 {
+h1, h2, .navbar-brand {
 	font-family: var(--font-1);
 	font-size: 2.8em;
 }
@@ -170,6 +169,24 @@ header {
 
 .articles path {
 	color: var(--fauve);
+}
+
+/*Tickets*/
+
+.tickets {
+	background: url("/img/bg-circus.jpg"), no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+}
+
+.tickets h2, .tickets > p {
+	color: var(--light);
+}
+
+.tickets img, .tickets .card-body {
+	height: 200px;
+	width: auto;
 }
 
 
