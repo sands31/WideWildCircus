@@ -97,16 +97,16 @@
 							<input type="hidden" name="articleId" th:value="${displayedArticle.id}">
 							<div class="form-group">
 							  <label for="inputAddress">Commentaire</label>
-							  <textarea name="content" class="form-control" id="inputAddress"></textarea>
+							  <textarea name="content" class="form-control" id="inputAddress" required></textarea>
 							</div>
 							<div class="form-row mb-">
 								<div class="form-group col-md-6">
 									<label for="inputName">Nom</label>
-									<input type="text" name="author" class="form-control" id="inputName" placeholder="Nom">
+									<input type="text" name="author" class="form-control" id="inputName" placeholder="Nom" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputEmail">Nom</label>
-									<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+									<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
 								</div>
 							</div>
 							<button type="submit" class="btn">Publier</button>
@@ -124,7 +124,7 @@
                             </div>
                           <div class="media-body d-flex flex-column justify-content-center">
                           <form method="POST" th:action="@{/articles}">
-                          	<input type="hidden" name="articleId" th:value="${article.id}" />
+                          	<input type="hidden" name="articleId" th:value="${article.id}"/>
                           	<button type="submit">
 	                            <h5 class="mt-0 my-0" th:text="${article?.title}">List-based media object</h5>
                           	</button>
