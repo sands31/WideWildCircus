@@ -1,19 +1,12 @@
 package com.wildcodeschool.WideWildCircus.controllers;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,7 +39,7 @@ public class AdminArticlesController {
 	@PostMapping("/admin/selectArticle")
 	public String selectArticle(Model model, @RequestParam Long articleId) {
 		model.addAttribute("selectedArticle", articleRepository.findById(articleId));
-		return "redirect:/admin/articles";
+		return "admin_article_update";
 	}
 	
 	@PostMapping("/admin/createArticle")
@@ -56,6 +49,22 @@ public class AdminArticlesController {
 		}
 		article.setDate(new Date());
 		articleRepository.save(article);
+		return "redirect:/admin/articles";
+	}
+	
+	@PostMapping("/admin/updateArticle")
+	public String updateArticle(Model model, @ModelAttribute Article article, @RequestParam(required = false) MultipartFile pictureFile) {
+		if (pictureFile != null && !pictureFile.isEmpty()) {
+			article.setPicturePath("img/" + fileService.uploadFile(pictureFile));
+		}
+		Article originalArticle = articleRepository.getOne(article.getId());
+		originalArticle.setAuthor(article.getAuthor());
+		originalArticle.setTitle(article.getTitle());
+		originalArticle.setDate(article.getDate());
+		originalArticle.setContent(article.getContent());
+		originalArticle.setPicturePath(article.getPicturePath());
+		originalArticle.setPublishState(article.isPublishState());
+		articleRepository.save(originalArticle);
 		return "redirect:/admin/articles";
 	}
 

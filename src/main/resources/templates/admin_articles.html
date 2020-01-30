@@ -61,70 +61,17 @@
 									<p class="card-text" th:text="|${#strings.substring(article?.content,0,110)} ...|">This is a longer card with supporting text below as a natural
 										lead-in to additional content. This content is a little bit longer.</p>
 									<div class="d-flex justify-content-between">
-										<button type="button" class="btn btn-light mt-3" data-toggle="modal" data-target="#exampleModalCenter">Modifier</button>										
+										<form method="POST" th:action="@{/admin/selectArticle}">
+											<input type="hidden" name="articleId" th:value="${article?.id}"/>
+											<button type="submit" class="btn btn-light mt-3">Modifier</button>										
+										</form>
 										<form method="POST" th:action="@{/admin/deleteArticle}">
 											<input type="hidden" name="articleId" th:value="${article?.id}"/>
 											<button type="submit" class="btn btn-light mt-3">Supprimer</button>										
 										</form>
 									</div>
 								</div>
-							</div>
-							
-							<!-- Modal -->
-							<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-							  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <h5 class="modal-title" id="exampleModalCenterTitle">Modification de l'article</h5>
-							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							          <span aria-hidden="true">&times;</span>
-							        </button>
-							      </div>
-							      <div class="modal-body">
-							      	<form>
-							      	<input type="hidden" name="id" th:value="${article?.id}"/>
-							      		 <div class="form-row">
-										    <div class="form-group col-md-6">
-										      <label for="inputAuthor">Auteur</label>
-										      <input type="text" class="form-control" id="inputAuthor" th:value="${article?.author}">
-										    </div>
-										    <div class="form-group col-md-6">
-										      <label for="inputDate">Date</label>
-										      <input type="date" class="form-control" id="inputDate" th:value="${article?.date}">
-										    </div>
-										  </div>
-										  <div class="form-row">
-										    <div class="form-group col-md-6">
-										      <label for="inputTitle">Titre</label>
-										      <input type="text" class="form-control" id="inputTitle" th:value="${article?.title}">
-										    </div>
-										  </div>
-										  <div class="form-group">
-										    <label for="inputContent">Contenu</label>
-										    <textarea class="form-control" id="inputAddress" th:text="${article?.content}"></textarea>
-										  </div>
-										  <div class="form-group">
-										    <div class="form-check">
-										      <input class="form-check-input" type="checkbox" id="gridCheck" th:checked="${article?.publishState}">
-										      <label class="form-check-label" for="gridCheck">
-										        Publié
-										      </label>
-										    </div>
-										  </div>
-									  <div class="form-group">
-									    <label for="exampleFormControlFile1">Image</label>
-									    <input type="file" name="picture" class="form-control-file" id="exampleFormControlFile1">
-									  </div>
-									</form>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-							        <button type="button" class="btn btn-primary">Mettre à jour</button>
-							      </div>
-							    </div>
-							  </div>
-							</div>			
-							
+							</div>					
 						</div>
 					</div>
 				</div>
