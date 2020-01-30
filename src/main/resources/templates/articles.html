@@ -32,11 +32,11 @@
 		<section class="articles container-fluid px-3 px-sm-5 py-3 py-sm-5">
             <div class="row py-4 d-flex justify-content-center">
 	            <div class="col-12 col-sm-6 mb-4">
-	                <article class="card">
-	                    <img src="img/art-circus-inside.jpg" class="card-img-top rounded-0" alt="...">
+	                <article class="card" th:if="${displayedArticle != null}" th:object="${displayedArticle}">
+	                    <img th:src="*{picturePath}" class="card-img-top rounded-0" alt="...">
 	                    <div class="card-body">
-	                        <h5 class="card-title mb-3">Card title</h5>
-	                        <div class="m-0 p-0">
+	                        <h5 class="card-title mb-3" th:text="*{title}">Card title</h5>
+	                        <div class="mb-2 p-0">
 	                            <span>
 	                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
 	                                    data-icon="user-circle"
@@ -46,7 +46,7 @@
 	                                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z">
 	                                    </path>
 	                                </svg>
-	                                Auteur
+	                                <span th:text="*{author}">Auteur</span>
 	                            </span>
 	                            <span class="ml-3">
 	                                <svg aria-hidden="true" focusable="false" data-prefix="far"
@@ -57,10 +57,10 @@
 	                                        d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
 	                                    </path>
 	                                </svg>
-	                                Date
+	                                <span th:text="*{#dates.format(date, 'dd-MM-yyyy')}">Date</span>
 	                            </span>
 	                        </div>
-	                        <p class="card-text">This is a longer card with supporting text below as a natural
+	                        <p class="card-text" th:text="*{content}">This is a longer card with supporting text below as a natural
 	                            lead-in to additional content. This content is a little bit longer.</p>
 	                    </div>
                     </article>
@@ -104,7 +104,7 @@
 	                            </span>
 	                        </div>
                               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                              <p class="card-text"><small class="text-muted" >Last updated 3 mins ago</small></p>
                             </div>
                             <hr>
                         </div>
@@ -134,37 +134,21 @@
 
                 </div>
                 
-	            <aside class="col-12 col-sm-2 mb-4">
-                    <h3 class="mb-4">Publications récentes</h3>
+	            <aside class="col-12 col-sm-2 mx-4 mb-4 pt-5">
+                    <h3 class="mb-5 font-1">Publications récentes</h3>
                     <ul class="list-unstyled">
-                        <li class="media my-4">
+                        <li class="media my-4" th:each="article : ${articles}">
                             <div class="img-container mr-3 d-flex justify-content-center align-items-center">
-                                <img src="img/art-circus-inside.jpg" alt="...">
-
+                                <img th:src="${article?.picturePath}" alt="...">
                             </div>
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1">List-based media object</h5>
-                            <p class="card-text"><small class="text-muted">Date de publication</small></p>                            
-                          </div>
-                        </li>
-                        <li class="media my-4">
-                            <div class="img-container mr-3 d-flex justify-content-center align-items-center">
-                                <img src="img/art-circus-inside.jpg" alt="...">
-
-                            </div>
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1">List-based media object</h5>
-                            <p class="card-text"><small class="text-muted">Date de publication</small></p>                            
-                          </div>
-                        </li>
-                        <li class="media my-4   ">
-                            <div class="img-container mr-3 d-flex justify-content-center align-items-center">
-                                <img src="img/art-circus-inside.jpg" alt="...">
-
-                            </div>
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1">List-based media object</h5>
-                            <p class="card-text"><small class="text-muted">Date de publication</small></p>                            
+                          <div class="media-body d-flex flex-column justify-content-center">
+                          <form method="POST" th:action="@{/articles}">
+                          	<input type="hidden" name="articleId" th:value="${article.id}" />
+                          	<button type="submit">
+	                            <h5 class="mt-0 my-0" th:text="${article?.title}">List-based media object</h5>
+                          	</button>
+                          </form>
+                            <p class="card-text"><small class="text-muted" th:text="*{#dates.format(article?.date, 'dd-MM-yyyy')}">Date de publication</small></p>                            
                           </div>
                         </li>
                       </ul>

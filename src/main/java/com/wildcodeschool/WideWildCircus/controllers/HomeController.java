@@ -19,7 +19,7 @@ public class HomeController {
 		
 		@GetMapping("/")
 		public String home(Model model) {
-			List<Article> articles = articleRepository.findAll();
+			List<Article> articles = articleRepository.findAllPublished();
 			model.addAttribute("articles", articles);
 			return "index";
 		}

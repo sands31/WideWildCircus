@@ -37,6 +37,7 @@
 
 .articles aside h5 {
 	font-size: 0.7em;;
+	font-family: var(--font-3);
 }
 
 .articles aside .text-muted {
@@ -51,6 +52,16 @@
 
 .articles aside img {
 	height: 100%;
+}
+
+.articles aside button {
+	background-color: transparent;
+	border: none;
+	text-align: left;	
+}
+
+.articles aside button:hover {
+	text-decoration: underline;
 }
 
 

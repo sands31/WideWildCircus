@@ -22,10 +22,11 @@ public class ArticlesController {
 	
 	@PostMapping("/articles")
 	public String askForArticle(Model model, @RequestParam Long articleId) {
-		List<Article> articles = articleRepository.findAll();
+		List<Article> articles = articleRepository.findAllPublished();
 		Collections.sort(articles, Comparator.comparing(Article::getDate).reversed());
 		Article displayedArticle = articleRepository.getOne(articleId);
 		model.addAttribute("displayedArticle", displayedArticle);
+		model.addAttribute("articles", articles);
 		return "/articles";
 	}
 	
