@@ -4,6 +4,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -14,18 +15,20 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 		    http
-		        .authorizeRequests()
-			        .antMatchers("/", "/articles", "/css/**", "/img/**", "/js/**").permitAll()
-			        .antMatchers("/admin**").hasRole("ADMIN")
-			            .and()
-			        .formLogin()
-			            .and()
-			        .httpBasic()
-				    	.and()
-					.logout()
-					.invalidateHttpSession(true)
-					.logoutUrl("/logout")
-					.logoutSuccessUrl("/");
+		    .sessionManagement()
+        	.sessionCreationPolicy(SessionCreationPolicy.STATELESS)	            
+	        .and()
+	        .authorizeRequests()
+	        .antMatchers("/", "/articles", "/css/**", "/img/**", "/js/**").permitAll()
+	        .antMatchers("/admin**").hasRole("ADMIN")
+	            .and()
+	        .formLogin()
+	            .and()
+	        .httpBasic()
+		    	.and()
+			.logout()
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/");
 		}
 		
 		@Override
