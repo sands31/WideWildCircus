@@ -1,7 +1,7 @@
 :root {
     --darkBrown: #393432;
     --brown: #b78065;
-    --light: #f9f2ec; 
+    --light: #fcfcfc; 
     --fauve:#ffc85c;
     --white: white;
     --active: #82D485;
@@ -15,6 +15,7 @@ body {
   padding-bottom: 30px;
   position: relative;
   min-height: 100%;
+  background-color: var(--light);
 }
 
 a {
@@ -95,7 +96,6 @@ a:focus {
   width: 250px;
   text-align: center;
   padding: 20px 0;
-  padding-left: 10px;
 }
 .sidebar-brand h2 {
   margin: 0;
@@ -172,6 +172,7 @@ a:focus {
 .btn {
 	background-color: var(--fauve);
 	border-color: var(--fauve);
+	width: 112px;
 }
 
 .btn:hover {
