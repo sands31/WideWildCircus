@@ -57,3 +57,12 @@
 .articles .comments .card {
 	border:none!important;
 }
+
+@media screen and (max-width: 765px){
+
+	.banner h1 {
+		font-size:1.2rem;
+	}
+
+}
+

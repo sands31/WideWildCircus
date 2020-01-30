@@ -92,8 +92,9 @@ main {
 /*Header*/
 
 header nav {
-	height: 150px;
+
 	background-color: var(--darkBrown);
+	padding: 32px 20px!important;
 	
 }
 
@@ -108,7 +109,7 @@ header {
 @media screen and (max-width: 765px){
 
 	header nav {
-		height: 100px;
+		padding: 20px 20px!important;	
 	}
 
 	.pawn {
@@ -124,8 +125,9 @@ header {
 		font-size: 1.1rem;;
 	}
 
-	p, li {
+	p, li, label {
 		font-size: 0.9rem;
 	}
+	
 
 }
