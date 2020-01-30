@@ -65,9 +65,9 @@
 	                    </div>
                     </article>
                     <!--Comments-->
-                    <div class="comments pt-4 my-sm-5">
+                    <div class="comments pt-4 my-sm-5" th:if="${displayedArticle != null and not #lists.isEmpty(displayedArticle.comments)}">
                         <h3 class="mb-0 mb-sm-2">Commentaires</h3>
-                        <div class="card" th:if="${displayedArticle != null and not #lists.isEmpty(displayedArticle.comments)}" th:each="comment : ${displayedArticle.comments}">
+                        <div class="card" th:each="comment : ${displayedArticle.comments}">
                             <div class="card-body px-1">
                               <div class="mb-3 p-0">
 	                            <span>
@@ -87,6 +87,7 @@
                             </div>
                             <hr>
                         </div>
+                        
 					</div>
 
 					<div class="live-comment my-3 my-sm-5">
