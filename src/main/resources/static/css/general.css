@@ -189,6 +189,11 @@ header {
 	width: auto;
 }
 
+/*Inspiration*/
+
+
+
+
 
 
 @media screen and (max-width: 765px){
@@ -208,8 +213,17 @@ header {
 		font-size:1.2rem;
 	}
 
-	.jumbotron p, .jumbotron li {
+	h3 {
+		font-size: 1.1rem;;
+	}
+
+	p, li {
 		font-size: 0.9rem;
+	}
+	
+	.inspiration iframe {
+		max-width: 100%;
+		height: auto;
 	}
 
 }
