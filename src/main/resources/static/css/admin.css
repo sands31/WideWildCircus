@@ -1,16 +1,14 @@
 :root {
-    --orange: #ec5d31;
-	--lightGrey: #eadecd;
-    --purple: #5e3388;
-    --grey: #c4c4c4; 
-    --darkGrey: #0f1011db;
-    --mediumGrey:#464646;
+    --darkBrown: #393432;
+    --brown: #b78065;
+    --light: #f9f2ec; 
+    --fauve:#ffc85c;
+    --white: white;
     --active: #82D485;
     --danger: #DC3545;
-    --update: orange;
-    --font-1: 'Acme';
-    --font-2: 'Roboto';
-    --font-nav: 'Open Sans';
+    --font-1: 'Rock Salt', cursive;    
+    --font-3: 'Open Sans';
+    --font-2: 'Raleway';
 }
 
 body {
@@ -22,12 +20,13 @@ body {
 a {
   transition: background 0.2s, color 0.2s;
 }
+
 a:hover,
 a:focus {
   text-decoration: none;
 }
 
-*{
+* {
 	font-family: var(--font-2), 'Arial', sans-serif;
 }
 
@@ -82,7 +81,7 @@ a:focus {
   margin-left: -250px;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #222;
+  background: var(--darkBrown);
   transition: all 0.5s ease;
 }
 
@@ -102,7 +101,7 @@ a:focus {
   margin: 0;
   font-weight: 600;
   font-size: 22px;
-  color: #fff;
+  color: var(--white);
   font-family: var(--font-1), 'Arial', sans-serif; 
 }
 
@@ -121,15 +120,15 @@ a:focus {
 .sidebar-nav > li a {
   display: block;
   text-decoration: none;
-  color: #757575;
+  color: var(--white);
   font-weight: 600;
   font-size: 15px;
 }
 .sidebar-nav > li > a:hover,
 .sidebar-nav > li.active > a {
   text-decoration: none;
-  color: #fff;
-  background: var(--orange);
+  color: var(--darkBrown);
+  background: var(--fauve);
 }
 .sidebar-nav > li > a svg {
   font-size: 25px;
@@ -151,16 +150,16 @@ a:focus {
 }
 #navbar-wrapper .navbar {
   border-width: 0 0 0 0;
-  background-color: #eee;
+  background-color: var(--fauve);
   font-size: 24px;
   margin-bottom: 0;
   border-radius: 0;
 }
 #navbar-wrapper .navbar a {
-  color: #757575;
+  color: var(--darkBrown);
 }
 #navbar-wrapper .navbar a:hover {
-  color: var(--orange);
+  color:var(--light);
 }
 
 #content-wrapper {
@@ -170,17 +169,17 @@ a:focus {
   top: 100px;
 }
 
-.btnCustom{
-	background-color: var(--orange);
-	font-weight: bold;
-	color:white;	
+.btn {
+	background-color: var(--fauve);
+	border-color: var(--fauve);
 }
 
-.btnCustom:hover{
-	background-color: var(--purple);
-	font-weight: bold;	
-	color:white;
+.btn:hover {
+	background-color: var(--darkBrown);
+	border-color: var(--darkBrown);
+	color: var(--fauve);
 }
+
 
 .profilePict {
 	width: 80px;
@@ -212,7 +211,11 @@ section svg:hover {
 
 .unlockSVG{
 	width:20px;
-	fill: var(--orange);
+	fill: var(--darkBrown);
+}
+
+.unlockSVG:hover{
+	fill: var(--light);
 }
 
 .pendingButton{
@@ -245,7 +248,7 @@ section svg:hover {
     width: 60px;
   }
   
-  #wrapper.toggled #navbar-wrapper {
+  #wrapper.toggled #navbar-wrapper {	
     position: absolute;
     margin-right: -190px;
 }
@@ -272,48 +275,6 @@ section svg:hover {
     top:0;
     margin-right: 60px;
   }
-    #navbar-wrapper {
-    position: sticky;
-    top: 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  #wrapper {
-    padding-left: 60px;
-  }
-
-  #sidebar-wrapper {
-    width: 60px;
-  }
-  
-#wrapper.toggled #navbar-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-  
-  #wrapper.toggled #content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-  }
-
-
-
-  #wrapper.toggled {
-    padding-left: 250px;
-  }
-
-  #content-wrapper {
-    position: relative;
-    top: 0;
-  }
-
-  #wrapper.toggled #navbar-wrapper,
-  #wrapper.toggled #content-wrapper {
-    position: relative;
-    margin-right: 250px;
-  }
-  
     #navbar-wrapper {
     position: sticky;
     top: 0;

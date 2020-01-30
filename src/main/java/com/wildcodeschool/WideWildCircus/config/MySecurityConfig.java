@@ -23,12 +23,18 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 	        .antMatchers("/admin**").hasRole("ADMIN")
 	            .and()
 	        .formLogin()
+	        .defaultSuccessUrl("/admin/dashboard")
 	            .and()
 	        .httpBasic()
 		    	.and()
 			.logout()
+				.invalidateHttpSession(true)
 				.logoutUrl("/logout")
-				.logoutSuccessUrl("/");
+				.logoutSuccessUrl("/login")
+		    .and()
+			.sessionManagement()
+			.maximumSessions(1)
+			.expiredUrl("/login");
 		}
 		
 		@Override
