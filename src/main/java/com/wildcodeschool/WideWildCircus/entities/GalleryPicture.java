@@ -22,6 +22,7 @@ public class GalleryPicture {
 	@Column
 	private String name;
 	private String description;
+	private String picturePath;
 	
 	
 	public GalleryPicture() {
@@ -66,4 +67,14 @@ public class GalleryPicture {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+
+	public String getPicturePath() {
+		return picturePath;
+	}
+
+
+	public void setPicturePath(String picturePath) {
+		this.picturePath = picturePath;
+	}	
 }
