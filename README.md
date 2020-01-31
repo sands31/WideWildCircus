@@ -1,5 +1,5 @@
 # WideWildCircus
-~Java, Sring-Boot, Jpa Hibernate, MySql, Bootstrap~
+Java, Sring-Boot, Jpa Hibernate, MySql, Bootstrap
 
 A website about a Wild Circus... Last projet from Wild Code School Session after 5 month learning Java (2 days of work).
 
