@@ -31,8 +31,8 @@
 	                      <div class="media-body d-flex flex-column justify-content-center">
 	                      <form method="POST" th:action="@{/admin/displayArticleComments}">
 	                      	<input type="hidden" name="articleId" th:value="${article.id}"/>
-	                      	<button type="submit">
-	                         <h5 class="mt-0 my-0" th:text="${article?.title}">List-based media object</h5>
+	                      	<button type="submit" class="px-0">
+	                         <h5 class="mt-0 my-0 mx-0" th:text="${article?.title}">List-based media object</h5>
 	                      	</button>
 	                      </form>
 	                        <p class="card-text"><small class="text-muted" th:text="*{#dates.format(article?.date, 'dd-MM-yyyy')}">Date de publication</small></p>                            
@@ -65,12 +65,14 @@
 	                     <hr>
 	                     
 	                  	<div class="d-flex justify-content-end mb-3">
-							<form method="POST" th:action="@{/admin/selectArticle}">
-								<input type="hidden" name="articleId" th:value="${article?.id}"/>
+							<form method="POST" th:action="@{/admin/selectComment}">
+								<input type="hidden" name="articleId" th:value="${displayedArticle.id}"/>
+								<input type="hidden" name="commentId" th:value="${comment.id}"/>
 								<button type="submit" class="btn btn-light mx-3 ">Modifier</button>										
 							</form>
-							<form method="POST" th:action="@{/admin/deleteArticle}">
-								<input type="hidden" name="articleId" th:value="${article?.id}"/>
+							<form method="POST" th:action="@{/admin/deleteComment}">
+								<input type="hidden" name="articleId" th:value="${displayedArticle.id}"/>
+								<input type="hidden" name="commentId" th:value="${comment.id}"/>
 								<button type="submit" class="btn btn-light mx-3">Supprimer</button>										
 							</form>
 						</div>

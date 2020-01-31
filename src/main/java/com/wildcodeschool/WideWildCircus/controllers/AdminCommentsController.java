@@ -29,13 +29,6 @@ public class AdminCommentsController {
 	public Article displayedArticle;
 	public List <Article> articles = new ArrayList<Article>();
 	
-
-//	@PostMapping("/admin/deleteArticle")
-//	public String deleteArticle(@RequestParam Long articleId) {
-//		articleRepository.deleteById(articleId);
-//		return "redirect:/admin/articles";
-//	}
-//	
 	@PostMapping("/admin/displayArticleComments")
 	public String selectArticle(Model model, @RequestParam Long articleId) {
 		model.addAttribute("displayedArticle", articleRepository.getOne(articleId));
@@ -43,7 +36,16 @@ public class AdminCommentsController {
 		model.addAttribute("page", "adminComments");
 		return "admin_articles_comments";
 	}
-//	
+	
+	@PostMapping("/admin/deleteComment")
+	public String deleteArticle(Model model, @RequestParam Long commentId, @RequestParam Long articleId) {
+		commentRepository.deleteById(commentId);
+		model.addAttribute("displayedArticle", articleRepository.getOne(articleId));
+		model.addAttribute("articles", articleRepository.findAll());
+		model.addAttribute("page", "adminComments");
+		return "admin_articles_comments";
+	}
+	
 //	@PostMapping("/admin/createArticle")
 //	public String createArticle(Model model, @ModelAttribute Article article, @RequestParam(required = false) MultipartFile pictureFile) {
 //		if (pictureFile != null && !pictureFile.isEmpty()) {
