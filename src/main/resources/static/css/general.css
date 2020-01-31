@@ -65,6 +65,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index:100;
 }
 
 .pawn path {
@@ -114,8 +115,9 @@ header {
 
 	.pawn {
 		bottom: 10px;
-		right: 10px;
+		right: 10px;	
 	}
+
 
 	h1, h2, .navbar-brand {
 		font-size:1.2rem;
