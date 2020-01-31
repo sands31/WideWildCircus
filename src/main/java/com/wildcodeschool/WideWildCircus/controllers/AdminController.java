@@ -46,5 +46,12 @@ public class AdminController {
 		return "admin_articles";
 	}
 	
+	@GetMapping("/admin/comments")
+	public String comments(Model model) {
+		model.addAttribute("articles", articleRepository.findAll());
+		model.addAttribute("page", "adminComments");
+		return "admin_articles_comments";
+	}
+	
 
 }

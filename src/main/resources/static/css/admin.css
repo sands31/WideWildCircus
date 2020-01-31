@@ -390,3 +390,34 @@ section svg:hover {
 	}	
   
 }
+
+/*Comment section*/
+
+.comments aside h5 {
+	font-size: 1em;
+	font-family: var(--font-2);
+}
+
+.comments aside .text-muted {
+	font-size: 0.8em;;
+}
+
+.comments aside .img-container {
+	height: 65px;
+	width: 65px;
+	overflow: hidden;
+}
+
+.comments aside img {
+	height: 100%;
+}
+
+.comments aside button {
+	background-color: transparent;
+	border: none;
+	text-align: left;	
+}
+
+.comments aside button:hover {
+	text-decoration: underline;
+}
