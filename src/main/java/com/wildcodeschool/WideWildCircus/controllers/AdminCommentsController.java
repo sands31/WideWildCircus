@@ -1,7 +1,6 @@
 package com.wildcodeschool.WideWildCircus.controllers;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.wildcodeschool.WideWildCircus.entities.Article;
 import com.wildcodeschool.WideWildCircus.entities.Comment;
 import com.wildcodeschool.WideWildCircus.repositories.ArticleRepository;
