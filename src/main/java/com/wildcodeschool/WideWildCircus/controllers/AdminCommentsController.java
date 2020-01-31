@@ -46,15 +46,13 @@ public class AdminCommentsController {
 		return "admin_articles_comments";
 	}
 	
-//	@PostMapping("/admin/createArticle")
-//	public String createArticle(Model model, @ModelAttribute Article article, @RequestParam(required = false) MultipartFile pictureFile) {
-//		if (pictureFile != null && !pictureFile.isEmpty()) {
-//			article.setPicturePath("img/" + fileService.uploadFile(pictureFile));
-//		}
-//		article.setDate(new Date());
-//		articleRepository.save(article);
-//		return "redirect:/admin/articles";
-//	}
+	@PostMapping("/admin/selectComment")
+	public String selectComent(Model model, @RequestParam Long commentId) {
+		model.addAttribute("selectedComment", commentRepository.getOne(commentId));
+		return "admin_comment_update";
+	}
+	
+
 //	
 //	@PostMapping("/admin/updateArticle")
 //	public String updateArticle(Model model, @ModelAttribute Article article, @RequestParam(required = false) MultipartFile pictureFile) {
