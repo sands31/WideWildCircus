@@ -391,6 +391,13 @@ section svg:hover {
   
 }
 
+/*Dasbord Section*/
+.admin-home {
+	background: url("/img/horses.jpg");
+	background-repeat:no-repeat;	
+	background-size: 100%;
+}
+
 /*Comment section*/
 
 .comments aside h5 {
@@ -419,5 +426,18 @@ section svg:hover {
 }
 
 .comments aside button:hover {
+	text-decoration: underline;
+}
+
+
+/*Gallery*/
+
+.btn-hidden {
+	background-color: transparent;
+	border: none;
+	text-align: left;	
+}
+
+.btn-hidden:hover {
 	text-decoration: underline;
 }

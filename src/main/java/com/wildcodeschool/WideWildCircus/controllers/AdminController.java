@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.wildcodeschool.WideWildCircus.entities.Article;
 import com.wildcodeschool.WideWildCircus.repositories.ArticleRepository;
 import com.wildcodeschool.WideWildCircus.repositories.CommentRepository;
+import com.wildcodeschool.WideWildCircus.repositories.GalleryPictureRepository;
 
 @Controller
 public class AdminController {
@@ -18,7 +19,9 @@ public class AdminController {
 	@Autowired
 	public ArticleRepository articleRepository;
 	@Autowired
-	public CommentRepository commentRepository;	
+	public CommentRepository commentRepository;
+	@Autowired
+	public GalleryPictureRepository galleryPictureRepository;
 	public Article displayedArticle;
 	public List <Article> articles = new ArrayList<Article>();
 	
@@ -51,6 +54,19 @@ public class AdminController {
 		model.addAttribute("articles", articleRepository.findAll());
 		model.addAttribute("page", "adminComments");
 		return "admin_articles_comments";
+	}
+	
+	@GetMapping("/admin/gallery")
+	public String gallery(Model model) {
+		model.addAttribute("galleryPictures", galleryPictureRepository.findAll());
+		model.addAttribute("page", "adminGallery");
+		return "admin_gallery";
+	}
+	
+	@GetMapping("/admin/addPictureSection")
+	public String addPicture(Model model) {
+		model.addAttribute("page", "adminGallery");
+		return "admin_gallery_add";
 	}
 	
 

@@ -67,7 +67,7 @@
 										</form>
 										<form method="POST" th:action="@{/admin/deleteArticle}">
 											<input type="hidden" name="articleId" th:value="${article?.id}"/>
-											<button type="submit" class="btn btn-light mt-3">Supprimer</button>										
+											<button type="submit" class="btn btn-light mt-3" onclick="return confirm('Etes-vous sûrs de vouloir supprimer cet article ?');">Supprimer</button>										
 										</form>
 									</div>
 								</div>

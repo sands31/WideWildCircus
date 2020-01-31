@@ -13,14 +13,37 @@
   <link rel="stylesheet" type="text/css" href="../css/admin.css">
   <title>Accueil Administrateur</title>
 </head>
-	<body >
+	<body>
   <div id="wrapper">
 	  <aside th:replace="fragments/admin_sidebar.html :: sidebar"></aside>
 	  <div th:replace="fragments/admin_sidebar.html :: navbar"></div>
-	  <section class="fluid-container pt-3" id="content-wrapper"> 
-	  	<h1 class="text-center my-4">Bienvenue</h1>	
-	  
-    	</section>
+	  <main class="fluid-container pt-3" id="content-wrapper">
+	  	<section>
+	  	<h2 class="text-center my-4">Ajout d'une photo à la gallerie</h2>
+	  	<div class="row d-flex justify-content-center pt-4">
+		  	<form method="post" th:action="@{/admin/addGalleryPicture}" class="col-12 col-sm-10" enctype="multipart/form-data">
+	      		 <div class="form-row">
+				    <div class="form-group col-md-6">
+				      <label for="inputTitle">Nom</label>
+				      <input type="text" class="form-control" id="inputTitle" name="name" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputContent">Contenu</label>
+				    <textarea class="form-control" id="inputContent" name="description" required></textarea>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlFile1">Image</label>
+				    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="pictureFile" required>
+				  </div>
+				  <div class="d-flex justify-content-center mt-4">
+					  <button type="submit" class="btn btn-inverse ">Ajouter</button>
+				  </div>
+			</form>
+	  	</div>
+
+	  	</section>	  
+    	</main>
 	</div>	  
 </body>
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>

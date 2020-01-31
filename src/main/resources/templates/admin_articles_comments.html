@@ -73,7 +73,7 @@
 							<form method="POST" th:action="@{/admin/deleteComment}">
 								<input type="hidden" name="articleId" th:value="${displayedArticle.id}"/>
 								<input type="hidden" name="commentId" th:value="${comment.id}"/>
-								<button type="submit" class="btn btn-light mx-3">Supprimer</button>										
+								<button type="submit" class="btn btn-light mx-3" onclick="return confirm('Etes-vous sûrs de vouloir supprimer ce commentaire ?');">Supprimer</button>										
 							</form>
 						</div>
 	                 </div>
