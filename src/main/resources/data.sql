@@ -16,11 +16,11 @@ INSERT INTO `gallery_picture` (`date`, `description`, `name`, `picture_path`) VA
 	('2020-01-30', 'De grands espaces pour nos éléphants', 'Basil et Tha', 'img/g-elephants.jpg'),
 	('2020-01-30', 'Le spectable le plus drôle', 'Clown', 'img/g-clown.jpg'),
 	('2020-01-30', 'Le parc de nos chevaux', 'Nos chevaux', 'img/g-horses.jpg'),
+	('2020-01-30', NULL, 'Cirque', 'img/g-circus-outside.jpg'),
 	('2020-01-30', NULL, 'Singe', 'img/g-monkey.jpg'),
-	('2020-01-30', NULL, 'Parapluie', 'g-umbrella.jpg'),
+	('2020-01-30', NULL, 'Parapluie', 'img/g-umbrella.jpg'),
 	('2020-01-30', NULL, 'Ours', 'img/g-bear.jpg'),
 	('2020-01-30', NULL, 'Lions', 'img/g-lions.jpg'),
-	('2020-01-30', NULL, 'Cirque', 'img/g-circus-outside.jpg'),
 	('2020-01-30', NULL, 'Chevaux', 'img/g-horses2.jpg'),
 	('2020-01-30', NULL, 'Lions blancs', 'img/g-white-lions.jpg'),
 	('2020-01-30', NULL, 'Spectacle', 'img/g-circus.jpg');

@@ -166,49 +166,9 @@
 			<div class="container gallery-container d-flex justify-content-center">
 				<div class="tz-gallery p-1 p-sm-5">
 					<div class="row">
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Park">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/horses.jpg">
-								<img src="img/horses.jpg" alt="Bridge">
-							</a>
-						</div>
-						<div class="col-sm-12 col-md-4">
-							<a class="lightbox" href="img/tigre.jpg">
-								<img src="img/tigre.jpg" alt="Tunnel">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Coast">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Rails">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Traffic">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Rocks">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Benches">
-							</a>
-						</div>
-						<div class="col-sm-6 col-md-4">
-							<a class="lightbox" href="img/lions.jpg">
-								<img src="img/lions.jpg" alt="Sky">
+						<div class="col-sm-6 col-md-4" th:each="galleryPicture : ${galleryPictures}">
+							<a class="lightbox" th:href="${galleryPicture.picturePath}">
+								<img th:src="${galleryPicture.picturePath}" th:alt="${galleryPicture.name}">
 							</a>
 						</div>
 					</div>
