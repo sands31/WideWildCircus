@@ -60,7 +60,7 @@
 	                      </span>
 	                  </div>
 	                       <p class="card-text" th:text="${comment?.content}">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-	                       <p class="card-text"><small class="text-muted" th:text="|Posté il y a ${#dates.minute(#dates.createNow()) - #dates.minute(comment.date)} min|">Last updated 3 mins ago</small></p>
+	                       <p class="card-text"><small class="text-muted" th:text="|Posté le ${#dates.format(comment.date, 'dd-MM-yyyy')}|">Last updated 3 mins ago</small></p>
 	                     </div>
 	                     <hr>
 	                     

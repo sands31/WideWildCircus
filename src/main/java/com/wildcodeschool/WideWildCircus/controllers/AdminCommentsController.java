@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.wildcodeschool.WideWildCircus.entities.Article;
+import com.wildcodeschool.WideWildCircus.entities.Comment;
 import com.wildcodeschool.WideWildCircus.repositories.ArticleRepository;
 import com.wildcodeschool.WideWildCircus.repositories.CommentRepository;
 import com.wildcodeschool.WideWildCircus.services.FileService;
@@ -38,7 +39,7 @@ public class AdminCommentsController {
 	}
 	
 	@PostMapping("/admin/deleteComment")
-	public String deleteArticle(Model model, @RequestParam Long commentId, @RequestParam Long articleId) {
+	public String deleteComment(Model model, @RequestParam Long commentId, @RequestParam Long articleId) {
 		commentRepository.deleteById(commentId);
 		model.addAttribute("displayedArticle", articleRepository.getOne(articleId));
 		model.addAttribute("articles", articleRepository.findAll());
@@ -47,27 +48,22 @@ public class AdminCommentsController {
 	}
 	
 	@PostMapping("/admin/selectComment")
-	public String selectComent(Model model, @RequestParam Long commentId) {
+	public String selectComment(Model model, @RequestParam Long commentId) {
 		model.addAttribute("selectedComment", commentRepository.getOne(commentId));
 		return "admin_comment_update";
 	}
-	
 
-//	
-//	@PostMapping("/admin/updateArticle")
-//	public String updateArticle(Model model, @ModelAttribute Article article, @RequestParam(required = false) MultipartFile pictureFile) {
-//		if (pictureFile != null && !pictureFile.isEmpty()) {
-//			article.setPicturePath("img/" + fileService.uploadFile(pictureFile));
-//		}
-//		Article originalArticle = articleRepository.getOne(article.getId());
-//		originalArticle.setAuthor(article.getAuthor());
-//		originalArticle.setTitle(article.getTitle());
-//		originalArticle.setDate(article.getDate());
-//		originalArticle.setContent(article.getContent());
-//		originalArticle.setPicturePath(article.getPicturePath());
-//		originalArticle.setPublishState(article.isPublishState());
-//		articleRepository.save(originalArticle);
-//		return "redirect:/admin/articles";
-//	}
+	@PostMapping("/admin/updateComment")
+	public String updateComment(Model model, @ModelAttribute Comment comment) {
+		Comment originalComment = commentRepository.getOne(comment.getId());
+		originalComment.setAuthor(comment.getAuthor());
+		originalComment.setDate(comment.getDate());
+		originalComment.setContent(comment.getContent());
+		commentRepository.save(originalComment);
+		model.addAttribute("displayedArticle", articleRepository.getOne(originalComment.getArticle().getId()));
+		model.addAttribute("articles", articleRepository.findAll());
+		model.addAttribute("page", "adminComments");
+		return "admin_articles_comments";
+	}
 
 }

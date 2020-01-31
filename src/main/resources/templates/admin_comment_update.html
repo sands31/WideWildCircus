@@ -21,7 +21,7 @@
 	  	<section>
 	  	<h2 class="text-center my-4">Modification d'un commentaire</h2>
 	  	<div class="row d-flex justify-content-center pt-4" th:if="${selectedComment != null}">
-		  	<form method="post" th:action="@{/admin/updateArticle}" class="col-12 col-sm-10" enctype="multipart/form-data" th:object="${selectedComment}	">
+		  	<form method="post" th:action="@{/admin/updateComment}" class="col-12 col-sm-10" th:object="${selectedComment}	">
 		  		<input type="hidden" th:field="*{id}">
 	      		 <div class="form-row">
 				    <div class="form-group col-md-6">
@@ -35,7 +35,7 @@
 				  </div>
 				  <div class="form-group">
 				    <label for="inputContent">Contenu</label>
-				    <textarea rows="10" minlength="115" class="form-control" id="inputAddress" th:field="*{content}"></textarea>
+				    <textarea rows="10" class="form-control" id="inputAddress" th:field="*{content}"></textarea>
 				  </div>
 				  <div class="d-flex justify-content-center mt-4">
 				  		<a href="/admin/comments" class="btn btn-inverse mx-3">Annuler</a>
