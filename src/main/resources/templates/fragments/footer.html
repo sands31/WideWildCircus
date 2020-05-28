@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<body>
+	<footer th:fragment="footer" id="footer" class="footer d-flex align-items-center justify-content-between flex-column">
+        <div class="footer-info d-flex flex-column justify-content-between flex-lg-row mx-4">
+            <div class="footer-info__about-us mb-4 mb-lg-0">
+                <h4>A propos de nous</h4>
+                <h3>The Wild Circus</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda illum veniam explicabo earum vel enim necessitatibus in suscipit accusamus, sint ipsam nam totam doloribus, qui at maiores eveniet? Eveniet, inventore.</p>
+            </div>
+            <div class="footer-info__timing mb-4 mb-lg-0">
+                <h4>Horaires</h4>
+                <ul>
+                    <li class="d-flex justify-content-between"><span>Samedi</span> <span>16h - 18h</span></li>
+                    <li class="d-flex justify-content-between"><span>Dimanche</span> <span>15h - 17h</span></li>
+                </ul>
+            </div>
+            <div class="footer-info__address mb-4 mb-lg-0">
+                <h4>Adresses</h4>
+                <ul>
+                    <ul class="mb-3">
+                        <li>189 Piney Mountain Rd</li>
+                        <li>Wytheville, Virginie</li>
+                    </ul>
+                    <ul class="mb-3">
+                        <li>+1234567890</li>
+                        <li>+1234567890</li>
+                    </ul>
+                    <ul class="mb-0">
+                        <li><a href="mailto:thewildcircus@gmail.com">thewildcircus@gmail.com</a></li>
+                        <li><a href="mailto:thomas.wild@gmail.com">thomas.wild@gmail.com</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright my-auto">
+            <div class="footer-copyright__detail">© Copyright 2020. All Rights Reserved.</div>
+            <div class="footer-copyright__detail text-center my-0">
+                Made by <span class="px-1">Sands</span> with 
+                <span id="roar-btn" class="px-1">
+                    <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="paw"
+                    class="svg-inline--fa fa-paw fa-w-16"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"
+                    ></path>
+                  </svg>
+                </span> 
+            </div>
+            <audio id="roar-sound" src="/sound/roar-sound-effect.mp3"></audio>       
+        </div>
+	
+	</footer>
+	
+
+</body>
+</html>
